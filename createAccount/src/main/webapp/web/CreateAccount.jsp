@@ -14,6 +14,7 @@
 			<div class="logo">중앙은행</div>
 		</header>
 	</div>
+	<form action="AccountServlet" method = "post" name = "frm">
 	<div id="wrapper">
 		<div id="content">
 			<h3>
@@ -31,6 +32,7 @@
 				</span>
 				<span class="error_next_box"></span>
 			</div>
+			<input type="hidden" name="combinedRegNum" id="combinedRegNum" value="">
 			<div>
 				<h3>
 					<label for="email">이메일</label>
@@ -54,6 +56,7 @@
 						<option value = "학생">학생</option>
 						<option value = "군인">군인</option>
 						<option value = "주부">주부</option>
+						<option value = "주부">기타</option>
 				</select>
 				<input type="text" id="job" style="display:none;" class="int" maxlength="20">
 				</span> 
@@ -66,6 +69,8 @@
 			</div>
 		</div>
 	</div>
+	</form>
+	<button type="button" onclick="document.getElementById('combinedRegNum').value = combineRegNum();">Submit</button>
 	<footer>
 		<div class="footer-wrap">
 			<span> Copyright © JOONGANG Corp. All Rights Reserved.</span>

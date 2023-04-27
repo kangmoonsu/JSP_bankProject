@@ -1,8 +1,7 @@
 package controller;
 
-import controller.action.Action;
-import controller.action.CreateAccountAction;
 
+import controller.action.*;
 
 
 public class ActionFactory {
@@ -18,10 +17,19 @@ public class ActionFactory {
 
 	public Action getAction(String command) {
 		Action action = null;
-
-		if (command.equals("createAccountAction")) {
-			action = new CreateAccountAction();
-		} 
+		if (command.equals("indexBeforeLogin")) {
+			action = new IndexBeforeLogin();
+		} else if (command.equals("loginAction")) {
+			action = new LoginAction();
+		} else if (command.equals("indexAfterLogin")) {
+			action = new IndexAfterLogin();
+		} else if (command.equals("joinFormAction")) {
+			action = new JoinFormAction();
+		} else if (command.equals("joinAction")) {
+			action = new JoinAction();
+		} else if (command.equals("logoutAction")) {
+			action = new LogoutAction();
+		}
 		return action;
 	}
 }

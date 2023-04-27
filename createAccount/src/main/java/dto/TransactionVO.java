@@ -7,6 +7,7 @@ public class TransactionVO {
 	private String sender_account;
 	private String receiver_account;
 	private Integer amount;
+	private String send_context;
 	private Date transaction_date;
 
 	public String getTransaction_num() {
@@ -39,6 +40,16 @@ public class TransactionVO {
 
 	public void setAmount(Integer amount) {
 		this.amount = amount;
+	}
+
+	
+	
+	public String getSend_context() {
+		return send_context;
+	}
+
+	public void setSend_context(String send_context) {
+		this.send_context = send_context;
 	}
 
 	public Date getTransaction_date() {

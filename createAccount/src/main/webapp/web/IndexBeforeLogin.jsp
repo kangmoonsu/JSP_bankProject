@@ -84,8 +84,8 @@ body {
 <body>
 	<div class="header">
 		<h1 class="title">중앙은행</h1>
-		<a href="#" class="signup">회원가입</a>
-		<a href="#" class="login">로그인</a> 
+		<a href="AccountServlet?command=joinFormAction" class="signup">회원가입</a>
+		<a href="AccountServlet?command=loginAction" class="login">로그인</a> 
 		<div class="clear"></div>
 	</div>
 	<div class = "main_img">

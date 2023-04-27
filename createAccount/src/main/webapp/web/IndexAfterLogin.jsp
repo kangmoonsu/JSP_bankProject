@@ -85,7 +85,7 @@ body {
 	<div class="header">
 		<h1 class="title">중앙은행</h1>
 		<a href="#" class="mypage">마이페이지</a>
-		<a href="#" class="logout">로그아웃</a> 
+		<a href="AccountServlet?command=logoutAction" class="logout">로그아웃</a> 
 		<div class="clear"></div>
 	</div>
 	<div class = "main_img">

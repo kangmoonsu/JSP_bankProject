@@ -32,6 +32,10 @@ public class AccountServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String command = request.getParameter("command");
 		
+		if (command == null) {
+			command = "indexBeforeLogin";
+		}
+		
 		ActionFactory af = ActionFactory.getInstance();
 		Action action = af.getAction(command);
 
