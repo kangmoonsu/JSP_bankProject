@@ -18,6 +18,8 @@ public class AccountDAO {
 		return instance;
 	}
 
+	// 문수
+	
 	public String createAccountNumber() { // 계좌번호 랜덤 생성 메서드 
 		String accountNumber = "";
 		boolean isDuplicate = true;
@@ -46,6 +48,31 @@ public class AccountDAO {
 		return accountNumber;
 	}
 
+	// 1인당 1개의 계좌만 개설 가능 개설 여부 확인
+	public boolean isAccountExist(int customer_num) throws SQLException {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    boolean isExist = false;
+
+	    try {
+	        conn = DBManager.getConnection();
+	        String sql = "select count(*) from account where customer_num = ?";
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setInt(1, customer_num);
+	        rs = pstmt.executeQuery();
+
+	        if (rs.next() && rs.getInt(1) > 0) {
+	            isExist = true;
+	        }
+	    } finally {
+	        DBManager.close(conn, pstmt, rs);
+	    }
+
+	    return isExist;
+	}
+
+	
 	// 계좌 정보 DB로 보내는 메서드
 	public int insertAccountInfo(AccountVO aVo) {
 		int result = -1;

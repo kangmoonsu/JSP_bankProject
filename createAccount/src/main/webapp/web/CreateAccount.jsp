@@ -65,7 +65,7 @@
 				<span class="error_next_box"></span>
 			</div>
 			<div class="btn_area">
-				<button type="button" id="btnJoin" onclick="combineRegNum();createAccount();">
+				<button type="button" id="btnJoin" onclick="createAccountAction();">
 					<span>개설하기</span>
 				</button>
 			</div>

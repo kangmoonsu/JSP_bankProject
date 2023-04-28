@@ -1,6 +1,7 @@
 package controller.action;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,10 +29,21 @@ public class CreateAccountAction implements Action {
 		aVo.setCustomer_num(cVo.getCustomer_num());		
 		
 		
-		cDao.updateCustomerInfo(cVo);
-		aDao.insertAccountInfo(aVo);
-		
-		
+		try {
+			if (aDao.isAccountExist(cVo.getCustomer_num())) {
+			    request.setAttribute("message", "이미 계좌가 존재합니다.");
+			} else {
+			    aVo.setAccount_num(aDao.createAccountNumber());
+			    aVo.setCustomer_num(cVo.getCustomer_num());
+
+			    cDao.updateCustomerInfo(cVo);
+			    aDao.insertAccountInfo(aVo);
+
+			    request.setAttribute("message", "계좌가 생성되었습니다.");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 	    dispatcher.forward(request, response);
 	}
