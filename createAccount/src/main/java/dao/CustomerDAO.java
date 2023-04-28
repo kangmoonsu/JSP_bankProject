@@ -38,7 +38,6 @@ public class CustomerDAO {
 	}
 	
 	// 기훈님
-	
 	public List<CustomerVO> selectAllCustomer(){
 		String sql = "select * from customer order by customer_num";
 		
@@ -238,7 +237,4 @@ public class CustomerDAO {
 			
 			return cVo;
 		}
-		
-	
-
 }

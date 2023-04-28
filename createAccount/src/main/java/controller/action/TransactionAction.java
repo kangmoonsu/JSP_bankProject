@@ -21,7 +21,7 @@ public class TransactionAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
-		String url = "/account/transaction.jsp";
+		String url = "/web/transaction.jsp";
 		
 		TransactionDAO tDao = TransactionDAO.getInstance();
 //		int customer_num = Integer.parseInt(request.getParameter("customer_num"));

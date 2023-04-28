@@ -39,8 +39,8 @@ function validateRegNum() {
 }
 
 function combineRegNum() {
-	const regNum1 = document.getElementById("reg_num1").value;
-	const regNum2 = document.getElementById("reg_num2").value;
-	const combinedRegNum = regNum1 + regNum2;
-	return combinedRegNum;
+    let reg_num1 = document.getElementById("reg_num1").value;
+    let reg_num2 = document.getElementById("reg_num2").value;
+    let combinedRegNum = reg_num1 + reg_num2;
+    document.getElementById("combinedRegNum").value = combinedRegNum;
 }

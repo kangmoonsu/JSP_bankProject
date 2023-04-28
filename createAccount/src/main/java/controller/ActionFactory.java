@@ -29,6 +29,16 @@ public class ActionFactory {
 			action = new JoinAction();
 		} else if (command.equals("logoutAction")) {
 			action = new LogoutAction();
+		} else if (command.equals("createAccountAction")) {
+			action = new CreateAccountAction();
+		} else if (command.equals("exchangeAction")) {
+			action = new ExchangeAction();
+		} else if (command.equals("customerBoardForm")) {
+			action = new CustomerBoardForm();
+		} else if (command.equals("transactionAction")) {
+			action = new TransactionAction();
+		} else if (command.equals("CustomerMyPageAction")) {
+			action = new customerMyPageAction();
 		}
 		return action;
 	}

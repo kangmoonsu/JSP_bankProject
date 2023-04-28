@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>계좌 개설하기</title>
-<link rel="stylesheet" type="text/css" href="../css/CreateAccount.css">
-<script type="text/javascript" src="../script/CreateAccount.js"></script>
+<link rel="stylesheet" type="text/css" href="css/CreateAccount.css">
+<script type="text/javascript" src="script/CreateAccount.js"></script>
 </head>
 <body>
 	<div class="main">
@@ -15,6 +15,8 @@
 		</header>
 	</div>
 	<form action="AccountServlet" method = "post" name = "frm">
+	<input type="hidden" name="combinedRegNum" id="combinedRegNum" value="">
+	
 	<div id="wrapper">
 		<div id="content">
 			<h3>
@@ -63,14 +65,13 @@
 				<span class="error_next_box"></span>
 			</div>
 			<div class="btn_area">
-				<button type="button" id="btnJoin" onclick="createAccount()">
+				<button type="button" id="btnJoin" onclick="combineRegNum();createAccount();">
 					<span>개설하기</span>
 				</button>
 			</div>
 		</div>
 	</div>
 	</form>
-	<button type="button" onclick="document.getElementById('combinedRegNum').value = combineRegNum();">Submit</button>
 	<footer>
 		<div class="footer-wrap">
 			<span> Copyright © JOONGANG Corp. All Rights Reserved.</span>

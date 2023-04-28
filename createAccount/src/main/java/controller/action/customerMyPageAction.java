@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class customerMyPageAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/customer/customerMyPage.jsp";
+		String url = "/web/customerMyPage.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
