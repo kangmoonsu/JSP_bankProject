@@ -74,4 +74,11 @@ public class CustomerVO {
 		this.job = job;
 	}
 
+	@Override
+	public String toString() {
+		return "CustomerVO [customer_num=" + customer_num + ", name=" + name + ", id=" + id + ", pw=" + pw + ", phone="
+				+ phone + ", reg_num=" + reg_num + ", email=" + email + ", job=" + job + "]";
+	}
+	
+
 }
